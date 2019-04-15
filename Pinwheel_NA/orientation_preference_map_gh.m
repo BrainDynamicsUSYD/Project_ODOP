@@ -250,7 +250,7 @@ end
 
 % Pearl stimulation
 
-% 0บ
+% 0ยบ
 A=0;
 xp=XC(8);
 yp=YC(8);
@@ -260,7 +260,7 @@ a=2;
 [z0]=pearl(XXPM12,YYPM12,A,xp,yp,s_x,s_y,a);
 contour(XXPM12,YYPM12,z0,'k')
 
-% % 45บ
+% % 45ยบ
 % A=45;
 % xp=XC(3);
 % yp=YC(3);
