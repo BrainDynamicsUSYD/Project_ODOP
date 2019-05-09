@@ -266,6 +266,8 @@ wp6 = deconvResponses_Wiener_2D_noisyBOLD.reconvBOLD(x0:end,y0:end,time_spe);
 Stimp = struct(g2,wp2,g3,wp3,g5,wp5,g6,wp6);
 fields_stimp = fieldnames(Stimp);
 
+store_max1_pos1 = zeros(1,4);
+store_min1_min1 = zeros(1,4);
 jj=1;
 figure('Name','BOLD profile x,y direction - Res.: 0.125 mm','NumberTitle','on'),
 for ii = 1:numel(fields_stimp)
@@ -312,8 +314,10 @@ for ii = 1:numel(fields_stimp)
         % Getting the minimum value close to the max
         kkmi = 1;
         for kkmi=1:size(indMaxValue,2)
-            store_min1_min = store_min1(ii,indMaxValue(kkmi));
-            store_min1_min1(1,size(indMaxValue,2)) = store_min1_min;
+            if ii <= size(store_min1,1)
+                store_min1_min = store_min1(ii,indMaxValue(kkmi));
+                store_min1_min1(1,size(indMaxValue,2)) = store_min1_min;
+            end
         end
 
 
