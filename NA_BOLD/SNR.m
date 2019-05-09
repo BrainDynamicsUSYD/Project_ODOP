@@ -27,11 +27,13 @@ function [noise] = SNR(V)
 % TR = 5.4s
 
 % Chaimow et al. (2011). Probably these are for 3T
-% lambda = 0.01297;
-% kappa = 6.641;
+lambda = 0.01297;
+kappa = 6.641;
 
 % Chaimow et al. (2018) values for 7T
-lambda = 0.0113;
-kappa = 9.9632;
-noise = (sqrt(1+lambda^2*kappa^2*V^2))/(kappa*V);
+% lambda = 0.0113;
+% kappa = 9.9632;
+
+% considering a task/spontaneous_signal ratio of 10
+noise = (sqrt(1+lambda^2*kappa^2*V^2))/(10*kappa*V);
 end
