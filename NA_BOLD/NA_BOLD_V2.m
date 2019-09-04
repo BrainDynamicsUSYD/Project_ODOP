@@ -26,6 +26,8 @@ cmap = jet;
 [xx, yy, tt] = meshgrid(x_experiment, y_experiment, t_experiment);
 
 % Pinwheel angle and positions
+% change these parameters from 1 to 4 to simulate OP of 0º,45º,90º,135º,
+% respectively
 TH = [ 0,  45,  90,  135]; 
 XC = [7.8, 7.5, 7.2, 7.5];
 YC = [7.5, 7.8, 7.5, 7.2];
@@ -90,6 +92,7 @@ end
 
 %% Convolution and deconvolution of neural activity w/ and w/o noise
 
+% change Gamma and v_b to do the sensitity analysis
 params.Gamma = 0.8; % wave damping rate
 params.v_b = 0.5e-3; % propagation speed
 
